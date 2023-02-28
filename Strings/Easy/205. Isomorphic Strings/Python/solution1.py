@@ -1,5 +1,5 @@
 class Solution:
-    # O(n) time | O(1) space
+    # O(n) time | O(n) space
     def isIsomorphic(self, s: str, t: str) -> bool:
         s_cache = {}
         t_cache = {}
