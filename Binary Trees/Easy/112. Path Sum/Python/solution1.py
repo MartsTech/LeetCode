@@ -5,18 +5,14 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    # O(n) time | O(n) space
+    # O(n) time | O(h) space
     def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
-        return self.hasPathSumHelper(root, targetSum, 0)
-
-    def hasPathSumHelper(self, node: Optional[TreeNode], targetSum: int, sum: int) -> bool:
-        if not node:
+        if not root:
             return False
-        sum += node.val
-        if sum == targetSum and not node.left and not node.right:
+        if not root.left and not root.right:
+            return root.val == targetSum
+        if self.hasPathSum(root.left, targetSum - root.val):
             return True
-        if self.hasPathSumHelper(node.left, targetSum, sum):
-            return True
-        if self.hasPathSumHelper(node.right, targetSum, sum):
+        if self.hasPathSum(root.right, targetSum - root.val):
             return True
         return False

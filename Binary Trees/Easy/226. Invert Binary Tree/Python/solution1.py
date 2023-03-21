@@ -5,14 +5,11 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    # O(n) time | O(n) space
+    # O(n) time | O(h) space
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
-        self.invertTreeHelper(root)
-        return root
-
-    def invertTreeHelper(self, node: Optional[TreeNode]) -> None:
-        if not node:
+        if not root:
             return
-        node.left, node.right = node.right, node.left
-        self.invertTreeHelper(node.left)
-        self.invertTreeHelper(node.right)
+        root.left, root.right = root.right, root.left
+        self.invertTree(root.left)
+        self.invertTree(root.right)
+        return root
