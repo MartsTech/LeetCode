@@ -1,3 +1,5 @@
+# LeetCode Solutions
+
 ## License
 
 > You can check out the full license [here](https://github.com/MartsTech/LeetCode/blob/main/LICENSE)
