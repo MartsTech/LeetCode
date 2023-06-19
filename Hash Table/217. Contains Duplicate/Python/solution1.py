@@ -1,9 +1,9 @@
 class Solution:
     # O(n) time | O(n) space
     def containsDuplicate(self, nums: List[int]) -> bool:
-        hash_map = {}
+        hashset = set()
         for num in nums:
-            if num in hash_map:
+            if num in hashset:
                 return True
-            hash_map[num] = True
+            hashset.add(num)
         return False
