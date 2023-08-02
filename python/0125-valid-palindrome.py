@@ -1,12 +1,14 @@
 class Solution:
-    # O(n) time | O(1) space
+    # O(n) time | O(1) space - where n is the length of s
     def isPalindrome(self, s: str) -> bool:
         l, r = 0, len(s) - 1
         while l < r:
-            while l < r and not s[l].isalnum():
+            if not s[l].isalnum():
                 l += 1
-            while l < r and not s[r].isalnum():
+                continue
+            if not s[r].isalnum():
                 r -= 1
+                continue
             if s[l].lower() != s[r].lower():
                 return False
             l += 1
