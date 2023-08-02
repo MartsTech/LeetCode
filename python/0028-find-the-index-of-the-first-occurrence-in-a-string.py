@@ -1,5 +1,5 @@
 class Solution:
-    # O(n * m) time | O(1) space
+    # O(n * m) time | O(1) space - where n is the lenght of haystack and m the lenght of needle
     def strStr(self, haystack: str, needle: str) -> int:
         for i in range(len(haystack) - len(needle) + 1):
             for j in range(len(needle)):
