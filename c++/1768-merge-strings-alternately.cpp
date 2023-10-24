@@ -1,19 +1,17 @@
 class Solution {
 public:
-    // O(n) time and O(1) space - where n is the length of the longest string
     string mergeAlternately(string word1, string word2) {
-        string res;
-        int i = 0, j = 0;
-        while (i < word1.size() && j < word2.size()) {
-            res += word1[i++];
-            res += word2[j++];
+        string result;
+        int m = word1.size(), n = word2.size();
+        int size = max(m, n);
+        for (int i = 0; i < size; ++i) {
+            if (i < m) {
+                result += word1[i];
+            }
+            if (i < n) {
+                result += word2[i];
+            }
         }
-        while (i < word1.size()) {
-            res += word1[i++];
-        }
-        while (j < word2.size()) {
-            res += word2[j++];
-        }
-        return res;
+        return result; 
     }
 };
