@@ -7,6 +7,8 @@ public:
         for (int i = 1; i < n; ++i) {
             if (nums[i] != res) {
                 --count;
+            } else {
+                ++count;
             }
             if (count == 0) {
                 res = nums[i];
