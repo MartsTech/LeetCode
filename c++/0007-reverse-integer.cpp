@@ -1,15 +1,15 @@
 class Solution {
 public:
-    // O(n) time, O(1) space - n is the number of digits
+    // O(log(x)) | O(1) - where x is the input number
     int reverse(int x) {
-        long res = 0;
+        int res = 0;
+        int min = INT_MIN / 10, max = INT_MAX / 10;
         while (x) {
-            res *= 10;
-            res += x % 10;
+            if (res > max || res < min) {
+                return 0;
+            }
+            res = res * 10 + x % 10;
             x /= 10;
-        }
-        if (res > INT_MAX || res < INT_MIN) {
-            return 0;
         }
         return res;
     }
