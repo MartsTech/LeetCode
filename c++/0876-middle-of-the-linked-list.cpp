@@ -10,7 +10,7 @@
  */
 class Solution {
 public:
-    // O(n) time | O(1) space - where n is the number of nodes in the linked list
+    // O(n) time | O(1) space
     ListNode* middleNode(ListNode* head) {
         ListNode* slow = head;
         ListNode* fast = head;

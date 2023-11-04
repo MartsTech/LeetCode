@@ -1,17 +1,20 @@
 class Solution {
 public:
-    // O(m + n) time | O(m) space - where m is the length of the magazine
-    // and n is the length of the ransom note
+    // O(m + n) time | O(n) space
     bool canConstruct(string ransomNote, string magazine) {
-        unordered_map<char, int> hashmap;
-        for (char c : magazine) {
-            ++hashmap[c];
+        int m = ransomNote.size(), n = magazine.size();
+        if (m > n) {
+            return false;
         }
-        for (char c : ransomNote) {
-            if (!hashmap[c]) {
+        unordered_map<char, int> letters;
+        for (char l : magazine) {
+            ++letters[l];
+        }
+        for (char l : ransomNote) {
+            if (!letters[l]) {
                 return false;
             }
-            --hashmap[c];
+            --letters[l];
         }
         return true;
     }

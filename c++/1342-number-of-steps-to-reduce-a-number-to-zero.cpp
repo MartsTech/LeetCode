@@ -1,16 +1,16 @@
 class Solution {
 public:
-    // O(log(n)) time | O(1) space - where n is the input number
+    // O(log(num)) time | O(1) space
     int numberOfSteps(int num) {
-        int res = 0;
+        int steps = 0;
         while (num) {
             if (num % 2 == 0) {
                 num /= 2;
             } else {
                 num -= 1;
             }
-            ++res;
+            ++steps;
         }
-        return res;
+        return steps;   
     }
 };
