@@ -1,6 +1,6 @@
 class Solution {
 public:
-    // O(n log n) time || O(1) space
+    // O(n) time || O(n) space
     bool isAnagram(string s, string t) {
         if (s.size() != t.size()) {
             return false;
