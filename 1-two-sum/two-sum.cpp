@@ -1,13 +1,13 @@
 class Solution {
 public:
-    // O(n^2) time | O(1) space
+    // O(n) time | O(n) space
     vector<int> twoSum(vector<int>& nums, int target) {
-        std::unordered_map<int, int> seen;
+        std::unordered_map<int, int> map;
         for (int i = 0; i < nums.size(); ++i) {
-            if (seen.find(target - nums[i]) != seen.end()) {
-                return {i, seen[target - nums[i]]};
+            if (map.find(target - nums[i]) != map.end()) {
+                return {i, map[target - nums[i]]};
             }
-            seen[nums[i]] = i;
+            map[nums[i]] = i;
         }
         return {};
     }
