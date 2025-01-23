@@ -1,12 +1,13 @@
 class Solution {
 public:
-    // O(n log n) time | O(1) space
+    // O(n) time | O(n) space
     bool containsDuplicate(vector<int>& nums) {
-        std::sort(nums.begin(), nums.end());
-        for (int i = 1; i < nums.size(); ++i) {
-            if (nums[i] == nums[i - 1]) {
+        std::unordered_set<int> seen;
+        for (int num : nums) {
+            if (seen.find(num) != seen.end()) {
                 return true;
             }
+            seen.insert(num);
         }
         return false;
     }
