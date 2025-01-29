@@ -2,12 +2,12 @@ class Solution {
 public:
     // O(n) time | O(n) space
     bool containsDuplicate(vector<int>& nums) {
-        std::unordered_set<int> seen;
+        unordered_set<int> set;
         for (int num : nums) {
-            if (seen.find(num) != seen.end()) {
+            if (set.find(num) != set.end()) {
                 return true;
             }
-            seen.insert(num);
+            set.insert(num);
         }
         return false;
     }
