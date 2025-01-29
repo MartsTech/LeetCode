@@ -1,16 +1,14 @@
 class Solution {
 public:
-    // O(n) time || O(n) space
+    // O(n) time | O(n) space
     bool isAnagram(string s, string t) {
-        if (s.size() != t.size()) {
-            return false;
-        }
-        std::unordered_map<char, int> freq;
+        if (s.size() != t.size()) return false;
+        unordered_map<char, int> map;
         for (char c : s) {
-            ++freq[c];
-        } 
+            ++map[c];
+        }
         for (char c : t) {
-            if (--freq[c] < 0) {
+            if(--map[c] < 0) {
                 return false;
             }
         }
