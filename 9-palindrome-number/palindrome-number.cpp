@@ -1,6 +1,6 @@
 class Solution {
 public:
-    // O(log(n)) time | O(n) space
+    // O(logn) time | O(1) space
     bool isPalindrome(int x) {
         if (x < 0) return false;
         long rev = 0;
