@@ -9,7 +9,7 @@ public:
             carry = sum / 10;
         }
         if (carry > 0) {
-            digits.insert(digits.begin(), 1);
+            digits.insert(digits.begin(), carry);
         }
         return digits;
     }
