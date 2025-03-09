@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // O(n) time | O(1) space
     ListNode* deleteDuplicates(ListNode* head) {
         ListNode* curr = head;
         while (curr && curr->next) {
