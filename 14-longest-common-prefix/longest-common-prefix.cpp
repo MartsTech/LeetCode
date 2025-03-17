@@ -1,12 +1,11 @@
 class Solution {
 public:
-    // O(m * n log n) time | O(1) space
+    // O(m + n log n) time | O(1) space
     string longestCommonPrefix(vector<string>& strs) {
-        if (strs.size() == 0) return "";
         sort(strs.begin(), strs.end());
-        string& first = strs[0], last = strs.back();
-        int i = 0;
-        while (i < min(first.size(), last.size()) && first[i] == last[i]) ++i;
-        return first.substr(0, i);
+        string& left = strs[0], right = strs.back();
+        int k = 0;
+        while (k < min(left.size(), right.size()) && left[k] == right[k]) ++k;
+        return left.substr(0, k);
     }
 };
