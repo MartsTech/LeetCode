@@ -5,7 +5,7 @@ public:
         unordered_map<int, int> map;
         for (int i = 0; i < nums.size(); ++i) {
             if (map.find(target - nums[i]) != map.end()) {
-                return {i, map[target - nums[i]]};
+                return {map[target - nums[i]], i};
             }
             map[nums[i]] = i;
         }
